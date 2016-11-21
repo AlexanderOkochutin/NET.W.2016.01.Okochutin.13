@@ -72,7 +72,13 @@ namespace Task01.Logic
         public void LoadFromRepo(IBookStorage storage)
         {
             bookSet = new SortedSet<Book>(storage.Load());
-        } 
+        }
+
+        #endregion
+
+        #region GetCollection
+
+         
 
         #endregion
     }
