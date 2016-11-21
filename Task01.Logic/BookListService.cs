@@ -31,6 +31,8 @@ namespace Task01.Logic
         /// constructor based on collection
         /// </summary>
         /// <param name="books">input collection of books</param>
+        /// <exception cref="ArgumentNullException">throw when input collection or one of its element is null</exception>
+        /// <exception cref="ArgumentException">throw when we try add already exist element to our set</exception>
         public BookListService(IEnumerable<Book> books ): this()
         {
             try
@@ -72,6 +74,12 @@ namespace Task01.Logic
 
         #region ServiceFunctionality
 
+        /// <summary>
+        /// Add book to the set of books
+        /// </summary>
+        /// <param name="book">added book</param>
+        /// <exception cref="ArgumentNullException">throw when input book is null</exception>
+        /// <exception cref="ArgumentException"> throw when added book is already exist in our set</exception>
         public void AddBook(Book book)
         {
             try
@@ -94,6 +102,12 @@ namespace Task01.Logic
            
         }
 
+        /// <summary>
+        /// Remove book from set or throw exception in case of fail
+        /// </summary>
+        /// <param name="book">book wich we want delete</param>
+        /// <exception cref="ArgumentNullException">throw when book is null</exception>
+        /// <exception cref="ArgumentException">throw when no such element in our set</exception>
         public void Remove(Book book)
         {
             try
@@ -114,6 +128,12 @@ namespace Task01.Logic
             }
         }
 
+        /// <summary>
+        /// return an instance of book
+        /// </summary>
+        /// <param name="predicate">our predicate</param>
+        /// <returns>in success case instance of book in fail case null</returns>
+        /// <exception cref="ArgumentNullException">throw when predicate or element in set is null</exception>
         Book FindByTag(Predicate<Book> predicate)
         {
             try
@@ -143,6 +163,9 @@ namespace Task01.Logic
             return null;
         }
 
+        /// <summary>
+        /// Sort using custom comparer
+        /// </summary>
         public void SortByTag(IComparer<Book> comparer)
         {
             try
@@ -158,6 +181,9 @@ namespace Task01.Logic
             bookSet = new SortedSet<Book>(bookSet,comparer);
         }
 
+        /// <summary>
+        /// sort by using comparision
+        /// </summary>
         public void SortByTag(Comparison<Book> comparison)
         {
             try
@@ -178,6 +204,9 @@ namespace Task01.Logic
 
         #region RepoFunctionality
 
+        /// <summary>
+        /// save set to the repo
+        /// </summary>
         public void SaveToRepo(IBookStorage storage)
         {
             try
@@ -193,7 +222,10 @@ namespace Task01.Logic
             storage.Save(bookSet);
         }
 
-
+        /// <summary>
+        /// load set from repo
+        /// </summary>
+        /// <param name="storage"></param>
         public void LoadFromRepo(IBookStorage storage)
         {
             try
