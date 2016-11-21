@@ -15,10 +15,11 @@ namespace Task01.CUI
             {
                 new Book("clr Via c#","Richter","program",2015,6),
                 new Book("Net pro perfomance","Goldshtein","program",2016,5),
-                new Book("Solaris","Lem","Fantastic",1961,1)
+                new Book("Solaris","Lem","Fantastic",1961,1),
             };
             BookListService bookService = new BookListService(test);
-            BookStorage storage = new BookStorage(@"C:\boo5ksStorage.txt");
+            bookService.AddBook(new Book("Solaris", "Lem", "Fantastic", 1961, 1));
+            BookStorage storage = new BookStorage(@"C:\booksStorage.txt");
             bookService.LoadFromRepo(storage);
             Console.ReadLine();
 
