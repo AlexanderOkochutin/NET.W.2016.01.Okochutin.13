@@ -48,7 +48,9 @@
     <Compile Include="BookListService.cs" />
     <Compile Include="BookStorage.cs" />
     <Compile Include="ComparerComparisionAdapter.cs" />
+    <Compile Include="CustomNLogger.cs" />
     <Compile Include="IBookStorage.cs" />
+    <Compile Include="ILogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

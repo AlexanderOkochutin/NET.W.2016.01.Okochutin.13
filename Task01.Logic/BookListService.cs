@@ -4,7 +4,6 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using NLog;
 
 namespace Task01.Logic
 {
@@ -14,7 +13,7 @@ namespace Task01.Logic
     public class BookListService
     {
 
-        private Logger logger = LogManager.GetCurrentClassLogger();
+        private ILogger logger { get; }
         private SortedSet<Book> bookSet;
 
         #region Constructors
@@ -22,9 +21,10 @@ namespace Task01.Logic
         /// <summary>
         /// default constructor
         /// </summary>
-        public BookListService()
+        public BookListService(ILogger logger)
         {
             bookSet = new SortedSet<Book>();
+            this.logger = logger ?? new CustomNLogger();
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace Task01.Logic
         /// <param name="books">input collection of books</param>
         /// <exception cref="ArgumentNullException">throw when input collection or one of its element is null</exception>
         /// <exception cref="ArgumentException">throw when we try add already exist element to our set</exception>
-        public BookListService(IEnumerable<Book> books ): this()
+        public BookListService(IEnumerable<Book> books,ILogger logger ): this(logger)
         {
             try
             {

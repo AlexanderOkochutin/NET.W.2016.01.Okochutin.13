@@ -4,22 +4,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using NLog;
 
 namespace Task01.Logic
 {
     public class BookStorage : IBookStorage
     {
-        private Logger logger = LogManager.GetCurrentClassLogger();
+        private ILogger logger;
 
         /// <summary>
         /// path to file-storage
         /// </summary>
         private readonly string path;
 
-        public BookStorage(string path)
+        public BookStorage(string path,ILogger logger)
         {
             this.path = path;
+            this.logger = logger ?? new CustomNLogger();
         }
 
         /// <summary>

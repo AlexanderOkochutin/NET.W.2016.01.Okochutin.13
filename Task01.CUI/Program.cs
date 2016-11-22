@@ -17,11 +17,12 @@ namespace Task01.CUI
                 new Book("Net pro perfomance","Goldshtein","program",2016,5),
                 new Book("Solaris","Lem","Fantastic",1961,1),
             };
-            BookListService bookService = new BookListService(test);
+            BookListService bookService = new BookListService(test,null);
             bookService.AddBook(new Book("test","testAuthor","testGenre",2000,1));
             bookService.Remove(new Book("Net pro perfomance", "Goldshtein", "program", 2016, 5));
-            BookStorage storage = new BookStorage(@"C:\booksStorage.txt");
+            BookStorage storage = new BookStorage(@"C:\books5Storage.txt",null);
             bookService.SaveToRepo(storage);
+           // BookListService test2 = new BookListService(storage.Load());
             Console.ReadLine();
 
         }
