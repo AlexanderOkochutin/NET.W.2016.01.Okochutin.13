@@ -29,16 +29,25 @@ namespace Task01.Logic
         
         public Book(string title, string author, string genre, int year, int edition)
         {
-            if (string.IsNullOrEmpty(title)) throw new ArgumentException("cant be null or empty param name: ",nameof(title));
-            if (string.IsNullOrEmpty(author)) throw new ArgumentException("cant be null or empty param name: ", nameof(author));
-            if (string.IsNullOrEmpty(genre)) throw new ArgumentException("cant be null or empty param name: ", nameof(genre));
-            if(year<=0) throw new ArgumentOutOfRangeException(nameof(year),"year must be more than zero");
-            if (edition <= 0) throw new ArgumentOutOfRangeException(nameof(edition), "edition must be more than zero");
+            ConstructorValidator(title,author,genre,year,edition);
             Title = title;
             Author = author;
             Genre = genre;
             Year = year;
             Edition = edition;
+        }
+
+        #endregion
+
+        #region validator
+
+        private void ConstructorValidator(string title, string author, string genre, int year, int edition)
+        {
+            if (string.IsNullOrEmpty(title)) throw new ArgumentException("cant be null or empty param name: ", nameof(title));
+            if (string.IsNullOrEmpty(author)) throw new ArgumentException("cant be null or empty param name: ", nameof(author));
+            if (string.IsNullOrEmpty(genre)) throw new ArgumentException("cant be null or empty param name: ", nameof(genre));
+            if (year <= 0) throw new ArgumentOutOfRangeException(nameof(year), "year must be more than zero");
+            if (edition <= 0) throw new ArgumentOutOfRangeException(nameof(edition), "edition must be more than zero");
         }
 
         #endregion
