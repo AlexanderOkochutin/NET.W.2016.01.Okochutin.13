@@ -71,12 +71,12 @@ namespace Task01.Logic
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            if (Title == other.Title)
-                if (Author == other.Author)
-                    if (Genre == other.Genre)
-                        if (Year == other.Year)
-                            if (Edition == other.Edition)
-                                return true;
+            if (Title == other.Title &&
+                Author == other.Author &&
+                Genre == other.Genre &&
+                Year == other.Year &&
+                Edition == other.Edition)
+                return true;
             return false;
         }
 
