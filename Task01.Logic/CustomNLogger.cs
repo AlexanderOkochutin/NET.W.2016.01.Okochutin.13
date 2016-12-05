@@ -7,7 +7,7 @@ using NLog;
 
 namespace Task01.Logic
 {
-    class CustomNLogger:ILogger
+    public class CustomNLogger:ILogger
     {
         private readonly Logger logger = LogManager.GetCurrentClassLogger();
 

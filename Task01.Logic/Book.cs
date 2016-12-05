@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Globalization;
+using System.Xml.Serialization;
 
 namespace Task01.Logic
 {
     /// <summary>
     /// Book class
     /// </summary>
+    [Serializable]
     public class Book : IEquatable<Book>, IComparable<Book>,IComparable, IFormattable
     {
         #region properties
@@ -17,16 +19,19 @@ namespace Task01.Logic
         /// <summary>
         /// Book properties title, author name, genre(fantstic,detective and etc.), published year and number of edition
         /// </summary>
-        public string Title { get; }
-        public string Author { get; }
-        public string Genre { get; }
-        public int Year { get; }
-        public int Edition { get; }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public string Genre { get; set; }
+        public int Year { get; set; }
+        public int Edition { get; set; }
 
         #endregion
 
         #region constructors
-        
+
+        public Book()
+        { }
+
         public Book(string title, string author, string genre, int year, int edition)
         {
             ConstructorValidator(title,author,genre,year,edition);

@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01.Logic", "Task01.Logi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01.CUI", "Task01.CUI\Task01.CUI.csproj", "{02401D40-CD40-492B-A289-4733692ABF65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Task01.AdditionalStorages", "Task01.AdditionalStorages\Task01.AdditionalStorages.csproj", "{931F921C-239C-4F64-A4F1-DD717042A094}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{02401D40-CD40-492B-A289-4733692ABF65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02401D40-CD40-492B-A289-4733692ABF65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02401D40-CD40-492B-A289-4733692ABF65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{931F921C-239C-4F64-A4F1-DD717042A094}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{931F921C-239C-4F64-A4F1-DD717042A094}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{931F921C-239C-4F64-A4F1-DD717042A094}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{931F921C-239C-4F64-A4F1-DD717042A094}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

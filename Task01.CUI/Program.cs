@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Task01.AdditionalStorages;
 using Task01.Logic;
 
 namespace Task01.CUI
@@ -19,12 +20,16 @@ namespace Task01.CUI
             };
             BookListService bookService = new BookListService(test,null);
             bookService.AddBook(new Book("test","testAuthor","testGenre",2000,1));
-            bookService.Remove(new Book("Net pro perfomance", "Goldshtein", "program", 2016, 5));
-            BookStorage storage = new BookStorage(@"C:\books5Storage.txt",null);
+            SerializeStorage serStorage = new SerializeStorage(@"C:\OldbooksStorage.txt",null);
+            XMLstorage xmlStorage = new XMLstorage(@"C:\NewbooksStorage.txt", null);
+            BookStorage storage = new BookStorage(@"C:\NewbooksStorage.txt", null);
+            bookService.SaveToRepo(xmlStorage);
+            bookService.SaveToRepo(serStorage);
             bookService.SaveToRepo(storage);
-           // BookListService test2 = new BookListService(storage.Load());
+            BookListService testXml = new BookListService(xmlStorage.Load(),null); 
+            BookListService testSer = new BookListService(serStorage.Load(),null);
+            BookListService testOld = new BookListService(storage.Load(), null);
             Console.ReadLine();
-
         }
     }
 }

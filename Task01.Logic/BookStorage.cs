@@ -31,7 +31,7 @@ namespace Task01.Logic
         {
             try
             {
-                using (FileStream fileStream = new FileStream(path, FileMode.Open))
+                using (FileStream fileStream = new FileStream(path, FileMode.OpenOrCreate))
                 {
                     using (BinaryWriter binaryWriter = new BinaryWriter(fileStream))
                     {

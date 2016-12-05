@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02401D40-CD40-492B-A289-4733692ABF65}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{931F921C-239C-4F64-A4F1-DD717042A094}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Task01.CUI</RootNamespace>
-    <AssemblyName>Task01.CUI</AssemblyName>
+    <RootNamespace>Task01.AdditionalStorages</RootNamespace>
+    <AssemblyName>Task01.AdditionalStorages</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,17 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="SerializeStorage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XMLstorage.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Task01.AdditionalStorages\Task01.AdditionalStorages.csproj">
-      <Project>{931f921c-239c-4f64-a4f1-dd717042a094}</Project>
-      <Name>Task01.AdditionalStorages</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Task01.Logic\Task01.Logic.csproj">
       <Project>{635578e5-91c5-4586-90e8-382145a546ad}</Project>
       <Name>Task01.Logic</Name>
