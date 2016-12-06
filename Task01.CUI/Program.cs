@@ -21,14 +21,17 @@ namespace Task01.CUI
             BookListService bookService = new BookListService(test,null);
             bookService.AddBook(new Book("test","testAuthor","testGenre",2000,1));
             SerializeStorage serStorage = new SerializeStorage(@"C:\OldbooksStorage.txt",null);
+            NoSerXMLStorage XMLstorage = new NoSerXMLStorage(@"C:\NewXMLstorage.xml",null);
             XMLstorage xmlStorage = new XMLstorage(@"C:\NewbooksStorage.txt", null);
             BookStorage storage = new BookStorage(@"C:\NewbooksStorage.txt", null);
             bookService.SaveToRepo(xmlStorage);
             bookService.SaveToRepo(serStorage);
             bookService.SaveToRepo(storage);
+            bookService.SaveToRepo(XMLstorage);
             BookListService testXml = new BookListService(xmlStorage.Load(),null); 
             BookListService testSer = new BookListService(serStorage.Load(),null);
             BookListService testOld = new BookListService(storage.Load(), null);
+            BookListService testXML = new BookListService(XMLstorage.Load(),null);
             Console.ReadLine();
         }
     }
